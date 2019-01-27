@@ -1,5 +1,5 @@
 <template>
-  <div class="button-box" :class="{smallButtonBox: isPhone, bigButtonBox: isPC}">
+  <div class="button-box">
     <el-row class="button-group" :gutter="10">
       <el-col :span="6" class="col" v-for="(item, index) in icons" :key="index">
         <div class="icon" :class="item.name" @click="open(item)"></div>
@@ -13,8 +13,6 @@ export default {
   components: {},
   data() {
     return {
-      isPhone: false,
-      isPC: false,
       icons: [
         {
           name: "phone",
@@ -39,13 +37,6 @@ export default {
       ]
     };
   },
-  mounted() {
-    if (document.documentElement.clientWidth <= 600) {
-      this.isPhone = true;
-    } else {
-      this.isPC = true;
-    }
-  },
   methods: {
     open(item) {
       this.$alert(`${item.information}`, `${item.label}`, {
@@ -62,16 +53,10 @@ export default {
 };
 </script>
 <style scoped>
-.smallButtonBox {
-  width: 90%;
-}
 .button-box {
   transition: width 1s ease-out;
   width: 90%;
   margin: 0 auto;
-}
-.bigButtonBox {
-  width: 550px;
 }
 .phone {
   background-image: url(~assets/pics/phone.png);

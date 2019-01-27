@@ -8,26 +8,11 @@
       background-color="#395663"
       text-color="#fff"
       active-text-color="#ffd04b"
-      router="true"
+      :router="true"
     >
       <el-row>
-        <el-col :span="4">
-          <el-menu-item class="el-item" index="/">首页</el-menu-item>
-        </el-col>
-        <el-col :span="4">
-          <el-menu-item class="el-item" index="introduction">自我介绍</el-menu-item>
-        </el-col>
-        <el-col :span="4">
-          <el-menu-item class="el-item" index="skill">技能概况</el-menu-item>
-        </el-col>
-        <el-col :span="4">
-          <el-menu-item class="el-item" index="practice">项目实践</el-menu-item>
-        </el-col>
-        <el-col :span="4">
-          <el-menu-item class="el-item" index="project">实习经历</el-menu-item>
-        </el-col>
-        <el-col :span="4">
-          <el-menu-item class="el-item" index="about">关于本页</el-menu-item>
+        <el-col :span="6" v-for="(item,index) in list" :key="index">
+          <el-menu-item class="el-item" :index="item.index">{{item.title}}</el-menu-item>
         </el-col>
       </el-row>
     </el-menu>
@@ -38,12 +23,33 @@ export default {
   name: "HomeFooter",
   data() {
     return {
-      activeIndex: "/"
+      activeIndex: "/",
+      list: [
+        {
+          index: "/",
+          title: "首页"
+        },
+        {
+          index: "/introduction",
+          title: "简介"
+        },
+        {
+          index: "/skill",
+          title: "技能"
+        },
+        {
+          index: "/project",
+          title: "项目"
+        },
+      ]
     };
+  },
+  mounted() {
+    this.activeIndex = this.$route.path;
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key);
     }
   }
 };

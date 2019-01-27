@@ -2,19 +2,19 @@
   <div>
     <el-container>
       <el-main>
-        <home-body></home-body>
+        <project-body></project-body>
       </el-main>
       <Footer></Footer>
     </el-container>
   </div>
 </template>
 <script>
-import homeBody from "./body";
+import projectBody from "./body";
 import Footer from "../common/footer";
 export default {
-  name: "HomeIndex",
+  name: "ProjectIndex",
   components: {
-    homeBody,
+    projectBody,
     Footer
   }
 };

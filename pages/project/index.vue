@@ -1,11 +1,14 @@
 <template>
-  <div>Project</div>
+  <project></project>
 </template>
 
 <script>
+import project from '../../components/project/index';
 export default {
-  name: 'Project',
-  components: {}
+  name: "ProjectIndex",
+  components: {
+    project
+  }
 };
 </script>
 

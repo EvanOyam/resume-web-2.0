@@ -1,11 +1,14 @@
 <template>
-  <div>Introduction</div>
+  <introduction></introduction>
 </template>
 
 <script>
+import introduction from '../../components/introduction/index';
 export default {
-  name: "Introduction",
-  components: {}
+  name: "IntroductionIndex",
+  components: {
+    introduction
+  }
 };
 </script>
 

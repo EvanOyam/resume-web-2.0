@@ -1,11 +1,14 @@
 <template>
-  <div>Skill</div>
+  <skill></skill>
 </template>
 
 <script>
+import skill from '../../components/skill/index';
 export default {
-  name: 'Skill',
-  components: {}
+  name: "SkillIndex",
+  components: {
+    skill
+  }
 };
 </script>
 
